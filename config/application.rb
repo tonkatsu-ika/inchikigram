@@ -18,8 +18,9 @@ module Inchikigram
     config.generators do |g|
       g.template_engine   :haml
       g.stylesheets       false
-      g.javascript        false
+      g.javascripts       false
       g.helper            false
+      g.test_framework    false
     end
 
   end
