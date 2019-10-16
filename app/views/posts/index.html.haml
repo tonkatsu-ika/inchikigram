@@ -1,2 +1,6 @@
-/ to delete
-%p  hello, inchikigram    
+%h2
+  投稿一覧
+.posts-cotainer
+  - @posts.each do |post|
+    .post-container
+      = post.text

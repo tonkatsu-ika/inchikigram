@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @posts = Post.all # ページネーションは後で
   end
 
   def show
