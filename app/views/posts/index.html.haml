@@ -1,6 +1,8 @@
+= link_to "投稿する", new_post_path 
 %h2
   投稿一覧
 .posts-cotainer
   - @posts.each do |post|
     .post-container
       = post.text
+      = post.created_at
