@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 
   before_action :move_to_index, except: :index
     
-
   
   def index
     @posts = Post.includes(:user).all.order(id: "DESC").limit(30) # ページネーションはなし
@@ -34,6 +33,13 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to root_path
+  end
+
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts.build
+    @post = @tag.posts.page(params[:page])
   end
 
   private
