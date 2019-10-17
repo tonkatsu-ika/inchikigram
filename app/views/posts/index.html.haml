@@ -1,6 +1,9 @@
 .content-container
   .posts-container
-    - @posts.each do |post|
-      = render partial: "layouts/post", locals: {post: post}
+    - if @posts.length == 0 
+      %p 投稿がありません
+    - else
+      - @posts.each do |post|
+        = render partial: "layouts/post", locals: {post: post}
   %aside.sidebar-container
     = render partial: "layouts/sidebar"

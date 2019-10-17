@@ -9,7 +9,13 @@
     = image_tag "test-image.jpg", {width: "598", height: "598"}
   .content-wrapper
     .content-wrapper__function
-      like etc
+      .content-wrappper_function--left
+        = fa_icon "heart"
+      .content-wrapper__function--right
+        = link_to "/posts/#{post.id}/edit", {class: "link"} do
+          = fa_icon "edit"
+        = link_to "/posts/#{post.id}", {class: "link", method: "delete"} do
+          = fa_icon "trash"
     .content-wrapper__text
       %input.grad-trigger#trigger1{type: "checkbox"}
       %label.grad-btn{for: "trigger1"}

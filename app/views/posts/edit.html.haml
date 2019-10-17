@@ -1,0 +1,11 @@
+.post-form-container
+  
+  = form_for @post do |f|
+    .post-form-container__user-name
+      user name:
+      test-user
+    .post-form-container__post
+      = f.label "投稿の内容"
+      = f.text_area :text, placeholder: 'sample'
+    .post-form-container__btn
+      = f.submit value: "投稿を更新する", class: 'btn'
