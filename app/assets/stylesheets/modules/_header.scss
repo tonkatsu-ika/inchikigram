@@ -1,0 +1,74 @@
+.header-container {
+
+
+  display:              flex;
+  position:             fixed;
+  top:                  0;
+  z-index:              2;
+  width:                100%;
+  height:               $header-height;
+  padding:              20px;
+  border-bottom:        1px solid #ccc;
+  background-color:     #fff;
+
+  .link {
+    text-decoration:         none;
+    color:                   #000;
+  }
+
+  .header-left {
+
+    display:            flex;
+    height:             $header-height;
+    line-height:        $header-height;
+
+    .fa-camera {
+      font-size:        $fa-size;
+      line-height:      $header-height;
+    }
+    
+    &__logo {
+      font-family: 'Abril Fatface', cursive;
+      font-family: 'Patua One', cursive;
+      font-family: 'Homemade Apple', cursive;
+      font-size:        30px;
+      line-height:      $header-height;
+    }
+  }
+  .header-center {
+
+    height:             $header-height;
+
+    display:            flex;
+    margin:             0 auto;
+    width:              210px;
+    height:             26px;
+    border:             1px solid #ccc;
+    border-radius:      3px;
+
+    .fa-search {
+      font-color:       #ccc;
+      line-height:      26px;
+    }
+    &__search-box {
+      p {
+      }
+    }
+  }
+  .header-right {
+
+    display:            flex;
+    .fa-plus-square {
+      font-size:        $fa-size;
+    }
+    .fa-edit {
+      font-size:        $fa-size;
+    }
+    .fa-heart {
+      font-size:        $fa-size;
+    }
+    .fa-user {
+      font-size:        $fa-size;
+    }
+  }
+}

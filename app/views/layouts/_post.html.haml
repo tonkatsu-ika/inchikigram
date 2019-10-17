@@ -1,0 +1,23 @@
+.post-container
+  .top-wrapper
+    .top-wrapper__icon
+    .top-wrapper__user-name
+      user name
+    .top-wrapper__menu
+      = fa_icon "ellipsis-h"
+  .image-wrapper
+    = image_tag "test-image.jpg", {width: "598", height: "598"}
+  .content-wrapper
+    .content-wrapper__function
+      like etc
+    .content-wrapper__text
+      %input.grad-trigger#trigger1{type: "checkbox"}
+      %label.grad-btn{for: "trigger1"}
+        続きを読む ...
+      %div.grad-item
+        = post.text
+        ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+    .content-wrapper__time
+      = post.updated_at
+    .content-wrapper__comment
+      コメントを追加...

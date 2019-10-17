@@ -1,0 +1,13 @@
+.content-container {
+  width:            100vw;
+  margin:           0 auto;
+  padding-top:      $header-height;
+
+  .posts-container {
+    width:          $post-width;
+    margin:         $header-height auto;
+  }
+  .sidebar-container {
+    width:          0;
+  }
+}
