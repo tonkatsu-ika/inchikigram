@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @user_name = current_user.user_name
   end
 
   def create

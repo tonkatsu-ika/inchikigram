@@ -1,8 +1,8 @@
 .post-form-container
   = form_for @post do |f|
     .post-form-container__user-name
-      user name:
-      test-user
+      User name:
+      = @user_name
     .post-form-container__post
       = f.label "投稿欄"
       = f.text_area :text, placeholder: 'sample'
