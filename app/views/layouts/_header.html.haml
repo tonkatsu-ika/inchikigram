@@ -5,15 +5,16 @@
         = fa_icon "camera"
         %h1.header-left__logo
           inchikigram
-    .header-center
-      .header-center__search-box
-        =fa_icon "search"
-    .header-right
-      = link_to new_post_path, {class: "header-right__link link"} do
-        = fa_icon "plus-square"
-      = link_to "#", {class: "header-right__link link"} do
-        = fa_icon "edit"
-      = link_to "#", {class: "header-right__link link"} do
-        = fa_icon "heart"
-      = link_to "#", {class: "header-right__link link"} do
-        = fa_icon "user"
+    - if user_signed_in?
+      .header-center
+        .header-center__search-box
+          =fa_icon "search"
+      .header-right
+        = link_to new_post_path, {class: "header-right__link link"} do
+          = fa_icon "plus-square"
+        = link_to "#", {class: "header-right__link link"} do
+          = fa_icon "edit"
+        = link_to "#", {class: "header-right__link link"} do
+          = fa_icon "heart"
+        = link_to "#", {class: "header-right__link link"} do
+          = fa_icon "user"
