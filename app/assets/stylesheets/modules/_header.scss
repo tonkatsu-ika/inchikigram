@@ -2,12 +2,13 @@
 
 
   display:              flex;
+  justify-content:      space-between;
   position:             fixed;
   top:                  0;
   z-index:              2;
   width:                100%;
   height:               $header-height;
-  padding:              20px;
+  padding:              0 32px;
   border-bottom:        1px solid #ccc;
   background-color:     #fff;
 
@@ -26,13 +27,17 @@
       font-size:        $fa-size;
       line-height:      $header-height;
     }
-    
+    .fa-camera::after {
+      content:          "|";
+      margin-left:      10px;
+    }
     &__logo {
-      font-family: 'Abril Fatface', cursive;
-      font-family: 'Patua One', cursive;
-      font-family: 'Homemade Apple', cursive;
+      font-family:      'Abril Fatface', cursive;
+      font-family:      'Patua One', cursive;
+      font-family:      'Homemade Apple', cursive;
       font-size:        30px;
       line-height:      $header-height;
+      margin-left:      10px;
     }
   }
   .header-center {
@@ -41,23 +46,32 @@
 
     display:            flex;
     margin:             0 auto;
-    width:              210px;
-    height:             26px;
-    border:             1px solid #ccc;
-    border-radius:      3px;
+    padding:            24px 0;
 
-    .fa-search {
-      font-color:       #ccc;
-      line-height:      26px;
-    }
     &__search-box {
-      p {
+      width:              210px;
+      height:             26px;
+      border:             1px solid #ccc;
+      border-radius:      3px;
+
+      position:            relative;
+    
+      .fa-search {
+        font-color:       #ccc;
+        line-height:      26px;
+        position:         absolute;
+        top:              -2px;
+        left:             8px;
       }
     }
   }
   .header-right {
 
     display:            flex;
+    justify-content:    space-around;
+    width:              25%;
+    height:             $header-height;
+    line-height:        $header-height;
     .fa-plus-square {
       font-size:        $fa-size;
     }
@@ -70,5 +84,18 @@
     .fa-user {
       font-size:        $fa-size;
     }
-  }
+
+    .fa-plus-square:hover {
+      color:            $insta-pink;
+    }
+    .fa-edit:hover {
+      color:            $insta-pink;
+    }
+    .fa-heart:hover {
+      color:            $insta-pink;
+    }
+    .fa-user:hover {
+      color:            $insta-pink;
+    }
+ }
 }

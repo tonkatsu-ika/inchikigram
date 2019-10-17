@@ -1,9 +1,10 @@
 %header
   .header-container
-    = link_to root_path, {class: "header-left link"} do
-      = fa_icon "camera"
-      %h1.header-left__logo
-        inchikigram
+    .header-left
+      = link_to root_path, {class: "header-left link"} do
+        = fa_icon "camera"
+        %h1.header-left__logo
+          inchikigram
     .header-center
       .header-center__search-box
         =fa_icon "search"
