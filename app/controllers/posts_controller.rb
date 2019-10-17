@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
+  
   def index
-    @posts = Post.all # ページネーションは後で
+    @posts = Post.all.order(id: "DESC").limit(30) # ページネーションはなし
   end
 
   def show
@@ -17,12 +18,17 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(:id)
   end
 
   def update
+    @post = Post.find(:id)
+    @post.update
   end
 
   def destroy
+    @post = Post.find(:id)
+    @post.destroy
   end
 
   private
@@ -30,4 +36,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:text)
   end
+
+  
 end

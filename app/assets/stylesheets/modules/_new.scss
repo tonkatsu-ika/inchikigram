@@ -1,0 +1,56 @@
+.post-form-container {
+
+  width:                400px;
+  margin:               $header-height auto 0;
+  padding-top:          $header-height;
+
+  display:              flex;
+
+  &__user-name {
+    font-size:          14px;
+    margin-bottom:      30px;
+  }
+  
+  &__post {
+    
+    margin-bottom:      30px;
+    display:            flex;
+    flex-direction:     column;
+
+    label {
+      font-size:        14px;
+      color:            #999;
+    }
+
+    textarea {
+      width:              400px;
+      height:             300px;
+      border:             1px solid $light-grey;
+    }
+
+  }
+  
+  &__btn {
+  
+      cursor:           pointer;
+
+      input {
+        border:           1px solid $black;
+        border-radius:    8px;
+        width:            400px;
+        height:           60px;
+        background-color: $black;
+        font-size:        14px;
+        color:            white;
+        margin:           0 auto;
+        letter-spacing:   5px;
+      }
+
+      &:hover {
+        opacity:        0.7;
+      }
+  }
+    
+  
+
+}

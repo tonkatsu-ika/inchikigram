@@ -1,4 +1,10 @@
-= form_for @post do |f|
-  = f.label "投稿欄"
-  = f.text_area :text
-  = f.submit value: "投稿"
+.post-form-container
+  = form_for @post do |f|
+    .post-form-container__user-name
+      user name:
+      test-user
+    .post-form-container__post
+      = f.label "投稿欄"
+      = f.text_area :text, placeholder: 'sample'
+    .post-form-container__btn
+      = f.submit value: "投稿", class: 'btn'
