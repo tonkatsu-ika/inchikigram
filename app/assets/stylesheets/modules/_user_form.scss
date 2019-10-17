@@ -1,4 +1,4 @@
-.sign-up-container {
+.user-form-container {
   
   width:                400px;
   margin:               0 auto;
@@ -28,7 +28,15 @@
       height:           40px;
       margin-top:       10px;
       padding:          8px;
+    }
+    input[type="checkbox"] {
+      margin-top:       8px;
+      height:           20px;
+      width:            20px;
 
+      &:hover {
+        cursor:           pointer;
+      }
     }
 
   }

@@ -1,4 +1,6 @@
 .content-container
+  .user-menu
+    = link_to "log-out", destroy_user_session_path, {method: "delete"} 
   .posts-container
     - if @posts.length == 0 
       %p 投稿がありません
