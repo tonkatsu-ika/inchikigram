@@ -1,16 +1,42 @@
 .user-menu {
-  text-align:       right;
-  margin:           8px 24px 0 0;
-
-  a {
-    text-decoration:  none;
-    color:            #999;
-    
-    &:hover {
-      cursor:           pointer;
-      color:            $insta-pink;
+  &__signed-in {
+    font-size:        14px;
+    text-align:       right;
+    margin:           8px 24px 0 0;
+  
+    a {
+      text-decoration:  none;
+      color:            #999;
+      
+      &:hover {
+        cursor:           pointer;
+        color:            $insta-pink;
+      }
     }
   }
+
+  &__not-signed-in {
+    font-size:      14px;
+    text-align:     right;
+    margin:         8px 24px 0 0;
+
+    a {
+      text-decoration:  none;
+      color:            #999;
+
+      &:hover {
+        cursor:       pointer;
+        color:        $insta-pink;
+      }
+    }
+
+    .login::after {
+      content:        "|";
+      margin-left:    4px;
+    }
+
+  }
+  
 
 }
 

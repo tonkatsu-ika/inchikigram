@@ -23,7 +23,7 @@
       line-height:    42px;
       margin-left:    16px;
     }
-    &__menu {
+    &__menu--signed-in {
       position:       absolute;
       top:            18px;
       right:          16px;
@@ -61,22 +61,26 @@
       }
 
       &--right {
+        &__signed-in {
+  
+          display:            flex;
+          justify-content:    space-between;
+          align-items:        baseline;
+  
+          .link {
+            text-decoration:  none;
+            color:            $black;
+            
+            .fa-edit {
+              font-size:        $fa-size;
+              margin-right:     24px;
+            }
+            .fa-trash {
+              font-size:        $fa-size;
+            }
+          }
+  
 
-        display:            flex;
-        justify-content:    space-between;
-        align-items:        baseline;
-
-        .link {
-          text-decoration:  none;
-          color:            $black;
-        }
-
-        .fa-edit {
-          font-size:        $fa-size;
-          margin-right:     24px;
-        }
-        .fa-trash {
-          font-size:        $fa-size;
         }
 
       }

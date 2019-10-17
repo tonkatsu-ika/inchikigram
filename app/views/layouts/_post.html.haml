@@ -2,9 +2,11 @@
   .top-wrapper
     .top-wrapper__icon
     .top-wrapper__user-name
-      = current_user.user_name
+      user name
     .top-wrapper__menu
-      = fa_icon "ellipsis-h"
+    - if user_signed_in?
+      .top-wrapper__menu--signed-in
+        = fa_icon "ellipsis-h"
   .image-wrapper
     = image_tag "test-image.jpg", {width: "598", height: "598"}
   .content-wrapper
@@ -12,10 +14,12 @@
       .content-wrappper_function--left
         = fa_icon "heart"
       .content-wrapper__function--right
-        = link_to "/posts/#{post.id}/edit", {class: "link"} do
-          = fa_icon "edit"
-        = link_to "/posts/#{post.id}", {class: "link", method: "delete"} do
-          = fa_icon "trash"
+      - if user_signed_in?
+        .content-wrapper_function--right__signed-in
+          = link_to "/posts/#{post.id}/edit", {class: "link"} do
+            = fa_icon "edit"
+          = link_to "/posts/#{post.id}", {class: "link", method: "delete"} do
+            = fa_icon "trash"
     .content-wrapper__text
       %input.grad-trigger#trigger1{type: "checkbox"}
       %label.grad-btn{for: "trigger1"}

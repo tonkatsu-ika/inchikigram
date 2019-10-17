@@ -1,6 +1,12 @@
 .content-container
   .user-menu
-    = link_to "log-out", destroy_user_session_path, {method: "delete"} 
+  - if user_signed_in?
+    .user-menu__signed-in
+      = link_to "ログアウト", destroy_user_session_path, {method: "delete"} 
+  - else
+    .user-menu__not-signed-in
+      = link_to "ログイン", user_session_path, {class: "login"}
+      = link_to "サインアップ", new_user_registration_path
   .posts-container
     - if @posts.length == 0 
       %p 投稿がありません

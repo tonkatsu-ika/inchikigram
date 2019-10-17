@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 
+  before_action :move_to_index, except: :index
+    
+
   
   def index
     @posts = Post.all.order(id: "DESC").limit(30) # ページネーションはなし
@@ -13,6 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     Post.create(post_params)  
     redirect_to root_path
   end
@@ -36,6 +40,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:text)
+  end
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
   end
 
   
