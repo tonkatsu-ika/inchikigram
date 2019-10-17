@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   
   def index
-    @posts = Post.all.order(id: "DESC").limit(30) # ページネーションはなし
+    @posts = Post.includes(:user).all.order(id: "DESC").limit(30) # ページネーションはなし
   end
 
   def show
@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     Post.create(post_params)  
     redirect_to root_path
   end
@@ -39,7 +38,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:text)
+    params.require(:post).permit(:text).merge(user_id: :current_user.id)
   end
 
   def move_to_index

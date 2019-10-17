@@ -13,6 +13,11 @@
         color:            $insta-pink;
       }
     }
+
+    .logout::after {
+      content:      "|";
+      margin-left:  4px;
+    }
   }
 
   &__not-signed-in {

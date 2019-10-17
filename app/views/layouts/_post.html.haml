@@ -1,8 +1,9 @@
 .post-container
   .top-wrapper
     .top-wrapper__icon
+      = post.user.user_name[0]
     .top-wrapper__user-name
-      user name
+      = post.user.user_name 
     .top-wrapper__menu
     - if user_signed_in?
       .top-wrapper__menu--signed-in

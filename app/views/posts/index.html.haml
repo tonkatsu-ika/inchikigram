@@ -2,7 +2,8 @@
   .user-menu
   - if user_signed_in?
     .user-menu__signed-in
-      = link_to "ログアウト", destroy_user_session_path, {method: "delete"} 
+      = link_to "ログアウト", destroy_user_session_path, {method: "delete", class: "logout"} 
+      = link_to "登録情報変更", edit_user_registration_path
   - else
     .user-menu__not-signed-in
       = link_to "ログイン", user_session_path, {class: "login"}
