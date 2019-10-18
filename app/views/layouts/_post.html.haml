@@ -9,7 +9,10 @@
       .top-wrapper__menu--signed-in
         = fa_icon "ellipsis-h"
   .image-wrapper
-    = image_tag "test-image.jpg", {width: "598", height: "598"}
+    - if post.image?
+      = image_tag post.image.url, {width: "598", height: "598"}
+    - else
+      = image_tag "test-image.jpg", {width: "598", height: "598"}
   .content-wrapper
     .content-wrapper__function
       .content-wrappper_function--left
