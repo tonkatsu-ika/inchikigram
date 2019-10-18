@@ -1,10 +1,13 @@
 .post-form-container
   = form_for @post do |f|
     .post-form-container__user-name
-      user name:
-      test-user
+      User name:
+      = @user_name
     .post-form-container__post
-      = f.label "投稿欄"
+      = f.label "投稿する画像"
+      = f.file_field :image, {class: "upload-image"}
+    .post-form-container__post
+      = f.label "投稿する文章"
       = f.text_area :text, placeholder: 'sample'
     .post-form-container__btn
       = f.submit value: "投稿", class: 'btn'

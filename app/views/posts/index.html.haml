@@ -2,6 +2,7 @@
   .user-menu
   - if user_signed_in?
     .user-menu__signed-in
+      = current_user.user_name
       = link_to "ログアウト", destroy_user_session_path, {method: "delete", class: "logout"} 
       = link_to "登録情報変更", edit_user_registration_path
   - else

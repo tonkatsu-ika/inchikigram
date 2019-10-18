@@ -9,7 +9,10 @@
       .top-wrapper__menu--signed-in
         = fa_icon "ellipsis-h"
   .image-wrapper
-    = image_tag "test-image.jpg", {width: "598", height: "598"}
+    - if post.image?
+      = image_tag post.image.url, {width: "598", height: "598"}
+    - else
+      = image_tag "test-image.jpg", {width: "598", height: "598"}
   .content-wrapper
     .content-wrapper__function
       .content-wrappper_function--left
@@ -22,12 +25,13 @@
           = link_to "/posts/#{post.id}", {class: "link", method: "delete"} do
             = fa_icon "trash"
     .content-wrapper__text
-      %input.grad-trigger#trigger1{type: "checkbox"}
-      %label.grad-btn{for: "trigger1"}
+      - trigger_name = "trigger#{post.id}"
+      %input.grad-trigger{id: trigger_name, type: "checkbox"}
+      %label.grad-btn{for: trigger_name}
         続きを読む ...
       %div.grad-item
         = post.text
-        ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキスト ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+        // = @tag.hashname
     .content-wrapper__time
       = post.updated_at
     .content-wrapper__comment

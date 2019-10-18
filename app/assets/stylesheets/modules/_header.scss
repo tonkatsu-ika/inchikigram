@@ -10,7 +10,7 @@
   height:               $header-height;
   padding:              0 32px;
   border-bottom:        1px solid #ccc;
-  background-color:     rgba(255, 255, 255, 0.5);
+  background-color:     rgba(255, 255, 255, 1);
 
   .link {
     text-decoration:         none;
@@ -78,7 +78,7 @@
     .fa-edit {
       font-size:        $fa-size;
     }
-    .fa-heart {
+    .fa-hashtag {
       font-size:        $fa-size;
     }
     .fa-user {
@@ -91,7 +91,7 @@
     .fa-edit:hover {
       color:            $insta-pink;
     }
-    .fa-heart:hover {
+    .fa-hashtag:hover {
       color:            $insta-pink;
     }
     .fa-user:hover {
