@@ -4,8 +4,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
-  has_many :hashtags, through: :posthashtags
-  has_many :posthashtags
+  has_and_belongs_to_many :hashtags
 
   # DBへのコミット直前に実行
   after_create do

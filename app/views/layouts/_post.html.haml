@@ -22,8 +22,9 @@
           = link_to "/posts/#{post.id}", {class: "link", method: "delete"} do
             = fa_icon "trash"
     .content-wrapper__text
-      %input.grad-trigger#trigger1{type: "checkbox"}
-      %label.grad-btn{for: "trigger1"}
+      - trigger_name = "trigger#{post.id}"
+      %input.grad-trigger{id: trigger_name, type: "checkbox"}
+      %label.grad-btn{for: trigger_name}
         続きを読む ...
       %div.grad-item
         = post.text

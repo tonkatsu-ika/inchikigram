@@ -69,8 +69,10 @@
   
           display:            flex;
           justify-content:    space-between;
-          align-items:        baseline;
+          align-items:        center;
+          
   
+
           .link {
             text-decoration:  none;
             color:            $black;
@@ -131,7 +133,8 @@
         height:       auto;
       }
       .grad-trigger:checked ~ .grad-item {
-        height:       auto;
+        height:       80%;
+        overflow:     scroll;
       }
       .grad-trigger:checked ~ .grad-item::before {
         display:      none;
