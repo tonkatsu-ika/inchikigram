@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_17_233029) do
+ActiveRecord::Schema.define(version: 2019_10_18_012121) do
 
   create_table "hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "hashname"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_233029) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id", null: false
+    t.string "image"
   end
 
   create_table "posts_hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
