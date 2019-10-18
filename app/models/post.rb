@@ -5,8 +5,12 @@ class Post < ApplicationRecord
   belongs_to :user
 
   has_and_belongs_to_many :hashtags
+  
 
-  # DBへのコミット直前に実行
+  # image uploader
+  mount_uploader :image, ImageUploader
+
+  # hashtag: DBへのコミット直前に実行
   after_create do
     post = Post.find_by(id: self.id)
     hashtags = self.text.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
