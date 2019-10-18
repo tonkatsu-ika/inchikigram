@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.includes(:user).all.order(id: "DESC").limit(30) # ページネーションはなし
+    @tag = Hashtag.find_by(hashname: params[:name])
   end
 
   def show
